@@ -39,11 +39,11 @@ public class StudentService {
         return repository.getAllStudents();
     }
 
-//    public void deleteTeacherByName(String name){
-//        repository.deleteTeacherByName(name);
-//    }
+    public void deleteTeacherByName(String name){
+        repository.deleteTeacherByName(name);
+    }
 
-//    public void deleteAllTeachers(){
-//        repository.deleteAllTeachers();
-//    }
+    public void deleteAllTeachers(){
+        repository.deleteAllTeachers();
+    }
 }

@@ -64,14 +64,14 @@ public class StudentController {
         return new ResponseEntity<>(students, HttpStatus.CREATED);
     }
 
-//    @DeleteMapping("/delete-teacher-by-name")
-//    public ResponseEntity<String> deleteTeacherByName(@RequestParam String teacher){
-//        service.deleteTeacherByName(teacher);
-//        return new ResponseEntity<>(teacher + " removed successfully", HttpStatus.CREATED);
-//    }
-//    @DeleteMapping("/delete-all-teachers")
-//    public ResponseEntity<String> deleteAllTeachers(){
-//        service.deleteAllTeachers();
-//        return new ResponseEntity<>("All teachers deleted successfully", HttpStatus.CREATED);
-//    }
+    @DeleteMapping("/delete-teacher-by-name")
+    public ResponseEntity<String> deleteTeacherByName(@RequestParam String teacher){
+        service.deleteTeacherByName(teacher);
+        return new ResponseEntity<>(teacher + " removed successfully", HttpStatus.CREATED);
+    }
+    @DeleteMapping("/delete-all-teachers")
+    public ResponseEntity<String> deleteAllTeachers(){
+        service.deleteAllTeachers();
+        return new ResponseEntity<>("All teachers deleted successfully", HttpStatus.CREATED);
+    }
 }

@@ -60,5 +60,27 @@ public class StudentRepository {
         return new ArrayList<>(studentDb.keySet());
     }
 
+    public Boolean deleteTeacherByName(String teacherName) {
+        if(teacherDb.containsKey(teacherName)) {
+            List<String> studentList = teacherStudentDb.get(teacherName);
+            for(String s : studentList) {
+                studentDb.remove(s);
+            }
+            teacherDb.remove(teacherName);
+            teacherStudentDb.remove(teacherName);
+            return true;
+        }
+        return false;
+    }
 
+    public void deleteAllTeachers() {
+
+        for (String teacherName : teacherStudentDb.keySet()) {
+            for (String students : teacherStudentDb.get(teacherName)) {
+                studentDb.remove(students);
+            }
+        }
+        teacherDb.clear();
+        teacherStudentDb.clear();
+    }
 }
